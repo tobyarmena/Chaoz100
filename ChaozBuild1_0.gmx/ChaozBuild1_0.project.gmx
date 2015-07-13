@@ -299,31 +299,43 @@
       <object>objects\obj_doorRight1</object>
       <object>objects\obj_doorDown1</object>
       <object>objects\obj_doorDown2</object>
+      <object>objects\spawnpoint1</object>
+    </objects>
+    <objects name="GUI">
+      <objects name="Resolution">
+        <object>objects\obj_r1920x1080</object>
+        <object>objects\obj_r1920x1200</object>
+        <object>objects\obj_r1024x768</object>
+        <object>objects\obj_fullscreen</object>
+        <object>objects\obj_r1600x1000</object>
+        <object>objects\obj_r1280x1024</object>
+        <object>objects\obj_r1600x1200</object>
+        <object>objects\obj_r1280x960</object>
+      </objects>
+      <objects name="Buttons">
+        <object>objects\obj_parent_button</object>
+        <object>objects\obj_resume</object>
+        <object>objects\obj_exit</object>
+        <object>objects\obj_settings</object>
+        <object>objects\obj_start</object>
+        <object>objects\obj_back</object>
+      </objects>
+    </objects>
+    <objects name="Dungeon">
+      <objects name="Chest">
+        <object>objects\obj_chest</object>
+        <object>objects\obj_chest_base</object>
+        <object>objects\obj_randomchestspawn</object>
+        <object>objects\obj_parent_chest</object>
+      </objects>
+      <objects name="Transport">
+        <object>objects\obj_portal</object>
+      </objects>
     </objects>
     <object>objects\obj_dmg</object>
-    <object>objects\obj_portal</object>
-    <object>objects\spawnpoint1</object>
     <object>objects\obj_target</object>
-    <object>objects\obj_chest</object>
-    <object>objects\obj_chest_base</object>
-    <object>objects\obj_randomchestspawn</object>
-    <object>objects\obj_parent_chest</object>
     <object>objects\obj_door2</object>
     <object>objects\obj_music</object>
-    <object>objects\obj_parent_button</object>
-    <object>objects\obj_resume</object>
-    <object>objects\obj_exit</object>
-    <object>objects\obj_settings</object>
-    <object>objects\obj_back</object>
-    <object>objects\obj_r1920x1080</object>
-    <object>objects\obj_r1280x960</object>
-    <object>objects\obj_r1600x1000</object>
-    <object>objects\obj_r1600x1200</object>
-    <object>objects\obj_r1280x1024</object>
-    <object>objects\obj_r1920x1200</object>
-    <object>objects\obj_r1024x768</object>
-    <object>objects\obj_fullscreen</object>
-    <object>objects\obj_start</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainmenu</room>
