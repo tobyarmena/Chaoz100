@@ -1,0 +1,1 @@
+global.skulldmg = 2
