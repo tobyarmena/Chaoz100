@@ -182,6 +182,7 @@
     <script>scripts\scr_unpause.gml</script>
     <script>scripts\scr_redraw.gml</script>
     <script>scripts\scr_fade.gml</script>
+    <script>scripts\scr_resizegrid.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_harrington</font>

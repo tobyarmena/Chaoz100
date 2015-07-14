@@ -133,6 +133,9 @@ while(i<=amount&&j<=amount*4)
 if ds_grid_value_disk_exists(global.map, global.startx, global.starty, distancetoendlimit, 2)
     scr_dungeonGen()
 
+scr_resizegrid()
+global.startx=ds_grid_value_x(global.map,0,0,width,height,1);
+global.starty=ds_grid_value_y(global.map,0,0,width,height,1);
 
 global.playerGrid = ds_grid_create(height,width)
 
