@@ -118,6 +118,7 @@
     <sprite>sprites\spr_start</sprite>
     <sprites name="Dungeon">
       <sprite>sprites\spr_spike</sprite>
+      <sprite>sprites\spr_turret</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -339,6 +340,7 @@
         <object>objects\obj_parent_wall</object>
       </objects>
       <objects name="Obstacles">
+        <object>objects\obj_turret</object>
         <object>objects\obj_spike</object>
       </objects>
     </objects>
