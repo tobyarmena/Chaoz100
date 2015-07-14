@@ -180,7 +180,7 @@ if hiveplace = true &amp;&amp; distance_to_object(obj_hive) &gt; 246 &amp;&amp; 
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_wall">
+    <event eventtype="4" ename="obj_parent_wall">
       <action>
         <libid>1</libid>
         <id>603</id>
