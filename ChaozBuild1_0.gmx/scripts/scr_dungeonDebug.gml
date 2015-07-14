@@ -31,31 +31,31 @@ for(i=0;i<width;i++)
           if(ds_grid_get(global.map,i,j) = 2)
           {
             draw_set_alpha(1)
-           draw_sprite_stretched(spr_miniMap,3,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,16,16)
+           draw_sprite_stretched(spr_miniMap,3,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
           }
           else
           {
           draw_set_alpha(1)
-          draw_sprite_stretched(spr_miniMap,1,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,16,16)
+          draw_sprite_stretched(spr_miniMap,1,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
           }
 
         }
         else if ds_grid_get(global.map,i,j) = 2 && ds_grid_get(global.roomBeside,i,j) = 1
         {
            draw_set_alpha(1)
-            draw_sprite_stretched(spr_miniMap,2,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,16,16)
+            draw_sprite_stretched(spr_miniMap,2,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
         }
            else if ds_grid_get(global.roomBeside,i,j) = 1 && ds_grid_get(global.map,i,j) > 0 && ds_grid_get(global.map,i,j) != 2
           {
           if ds_grid_get(global.roomVisit,i,j) = 1
           {
              draw_set_alpha(1)
-            draw_sprite_stretched(spr_miniMap,0,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,16,16)
+            draw_sprite_stretched(spr_miniMap,0,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
           }
           else if ds_grid_get(global.roomVisit,i,j) = 0
           {
             draw_set_alpha(1)
-            draw_sprite_stretched(spr_miniMap,4,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,16,16)
+            draw_sprite_stretched(spr_miniMap,4,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
           
           }
           
@@ -67,7 +67,7 @@ for(i=0;i<width;i++)
         }
         
 draw_set_alpha(1)
-draw_sprite_stretched(spr_miniMap,1,view_xview[0]+xx*block_size+h_space+h_offset,view_yview[0]+yy*block_size+v_space+v_offset,16,16)
+draw_sprite_stretched(spr_miniMap,1,view_xview[0]+xx*block_size+h_space+h_offset,view_yview[0]+yy*block_size+v_space+v_offset,sprite_size,sprite_size)
 //draw_text(view_xview[0]+10,view_yview[0]+view_hview[0]-100,global.scale)
 
 draw_rectangle(room_x,room_y,room_x+width,room_y+height,true)
