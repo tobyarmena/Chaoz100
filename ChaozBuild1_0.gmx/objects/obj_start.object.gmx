@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited()
 
-if action == true
+if action == true &amp;&amp; obj_startmenu.transitioning == false
     {
     if global.startmenu = true
         {
