@@ -139,6 +139,12 @@
     <instance objName="obj_wall" x="2656" y="2400" name="inst_6CC33B35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_doorUp" x="3104" y="2016" name="inst_AE18C0BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_weeping" x="3488" y="2688" name="inst_57AEAECE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spike" x="2816" y="2944" name="inst_990D26DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spike" x="2880" y="2944" name="inst_E82110F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spike" x="2944" y="2944" name="inst_972A851E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spike" x="2880" y="2880" name="inst_7876FD1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spike" x="2816" y="2880" name="inst_D9B36C42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spike" x="2944" y="2880" name="inst_1FC42BE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="2688" y="2368" w="64" h="64" xo="0" yo="0" id="10000007" name="inst_5CBB50B7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

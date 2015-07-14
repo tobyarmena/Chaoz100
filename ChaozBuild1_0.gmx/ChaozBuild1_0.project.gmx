@@ -116,6 +116,9 @@
     <sprite>sprites\spr_1920x1200</sprite>
     <sprite>sprites\spr_fullscreen</sprite>
     <sprite>sprites\spr_start</sprite>
+    <sprites name="Dungeon">
+      <sprite>sprites\spr_spike</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -334,6 +337,9 @@
       <objects name="Walls">
         <object>objects\obj_wall</object>
         <object>objects\obj_parent_wall</object>
+      </objects>
+      <objects name="Obstacles">
+        <object>objects\obj_spike</object>
       </objects>
     </objects>
   </objects>
