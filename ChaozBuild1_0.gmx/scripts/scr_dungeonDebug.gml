@@ -36,7 +36,8 @@ for(i=0;i<width;i++)
                 {
                 draw_set_alpha(1)
                 draw_sprite_stretched(spr_miniMap,3,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
-                }
+        
+                  }
             else
                 {
                 draw_set_alpha(1)
@@ -54,24 +55,40 @@ for(i=0;i<width;i++)
                 {
                 draw_set_alpha(1)
                  draw_sprite_stretched(spr_miniMap,0,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)  
-                   /*     else if (global.doorright == true) && (global.doorleft == true) && (global.doordown == true) && (global.doorup == true)
-                    {
-                      draw_set_alpha(1)
-                      draw_sprite_stretched(spr_corridor,0,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
-                    }*/
                
-                 }
-           
+        if abs(ds_grid_get(global.mpath,i-1,j)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i-1,j) >0 //left door
+        {
+        draw_set_colour(c_red)
+        draw_rectangle(room_x+i*block_size+h_space+h_offset-1,room_y+j*block_size+v_space+v_offset+sprite_size/2-4,room_x+i*block_size+h_space+h_offset-3,room_y+j*block_size+v_space+v_offset+sprite_size/2+4,0)
+        }
+        if abs(ds_grid_get(global.mpath,i+1,j)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i+1,j) >0 //right door
+        {
+        draw_set_colour(c_red)
+        draw_rectangle(room_x+i*block_size+h_space+h_offset+sprite_size+1,room_y+j*block_size+v_space+v_offset+sprite_size/2-2,room_x+i*block_size+h_space+h_offset+sprite_size+3,room_y+j*block_size+v_space+v_offset+sprite_size/2+4,0)
+        
+        }
+        if abs(ds_grid_get(global.mpath,i,j-1)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i,j-1) >0 //up door
+        {
+        draw_set_colour(c_red)
+        draw_rectangle(room_x+i*block_size+h_space+h_offset+sprite_size/2-4,room_y+j*block_size+v_space+v_offset-1,room_x+i*block_size+h_space+h_offset+sprite_size/2+4,room_y+j*block_size+v_space+v_offset-3,0)
+        }
+        if abs(ds_grid_get(global.mpath,i,j+1)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i,j+1) >0 //down door
+        {
+        draw_set_colour(c_red)
+        draw_rectangle(room_x+i*block_size+h_space+h_offset+sprite_size/2-4,room_y+j*block_size+v_space+v_offset+sprite_size+1,room_x+i*block_size+h_space+h_offset+sprite_size/2+4,room_y+j*block_size+v_space+v_offset+sprite_size+3,0)    
+        } 
+                
+                }
                 else if ds_grid_get(global.roomVisit,i,j) = 0
                 {              
                  draw_set_alpha(1)
                  draw_sprite_stretched(spr_miniMap,4,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)  
                  }
-           
-            }
+                   
+                }
            else if ds_grid_get(global.map,i,j) = 0
                 draw_set_alpha(0)
-        
+                
         //draw_rectangle(view_xview[0]+i*block_size+h_space+h_offset,view_yview[0]+j*block_size+v_space+v_offset,view_xview[0]+(i+1)*block_size+h_offset,view_yview[0]+(j+1)*block_size+v_offset,1)
         }
         
@@ -136,5 +153,4 @@ draw_rectangle(room_x,room_y,room_x+width,room_y+height,true)
                       draw_set_alpha(1)
                       draw_sprite_stretched(spr_corridor,10,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size2,sprite_size2)
                     }
-
 
