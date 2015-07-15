@@ -49,8 +49,10 @@ while(check == 0)
 
 //Move all grids to corner
 ds_grid_set_grid_region(global.map, global.map, xcut1, ycut1, width, height, 0, 0);
+ds_grid_set_grid_region(global.mpath, global.mpath, xcut1, ycut1, width, height, 0, 0);
 
 //resize grid
 ds_grid_resize(global.map,width-xcut1-xcut2,height-ycut1-ycut2)
+ds_grid_resize(global.mpath,width-xcut1-xcut2,height-ycut1-ycut2)
 width=width-xcut1-xcut2
 height=height-ycut1-ycut2

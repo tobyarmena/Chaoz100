@@ -58,7 +58,7 @@ if global.spawn = "up"
         phy_position_x = clamp(phy_position_x-2,xstart,xstart+48)
     }
 
-if ds_grid_get(global.map,global.playerPos_x,global.playerPos_y -1) &gt; 0 &amp;&amp; !instance_exists(par_enemies)
+if global.doorup==true &amp;&amp; !instance_exists(par_enemies)
     phy_position_x = clamp(phy_position_x+0.5,xstart,xstart+48)
 </string>
           </argument>

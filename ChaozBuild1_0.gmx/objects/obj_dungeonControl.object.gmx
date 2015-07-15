@@ -30,6 +30,12 @@ activatedoor=false
 scr_dungeonGen()
 global.currentDungeon = 0
 
+//door checks
+global.doorup=false
+global.doordown=false
+global.doorleft=false
+global.doorright=false
+
 /*
 Grid Legend:
 
@@ -154,10 +160,49 @@ down = obj_player.door_Down == true &amp;&amp; activatedoor==false
 left = obj_player.door_Left == true &amp;&amp; activatedoor==false
 right = obj_player.door_Right == true &amp;&amp; activatedoor==false
 
+
+//check which doors can open
+if abs(ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y -1)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))==1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y -1) !=0
+    {
+    global.doorup=true
+    }
+else
+    {
+    global.doorup=false
+    }
+    
+if abs(ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y +1)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))&lt;=1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y +1) !=0
+    {
+    global.doordown=true
+    }
+else
+    {
+    global.doordown=false
+    }
+    
+if abs(ds_grid_get(global.mpath,global.playerPos_x-1,global.playerPos_y)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))&lt;=1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x-1,global.playerPos_y) !=0
+    {
+    global.doorleft=true
+    }
+else
+    {
+    global.doorleft=false
+    }
+    
+if abs(ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))&lt;=1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y) !=0
+    {
+    global.doorright=true
+    }
+else
+    {
+    global.doorright=false
+    }
+
+
 if global.firstTouch == false
 {
 //update player position
-if ds_grid_get(global.map,global.playerPos_x,global.playerPos_y -1) &gt; 0 &amp;&amp; up &amp;&amp; !instance_exists(par_enemies)
+if global.doorup==true &amp;&amp; up &amp;&amp; !instance_exists(par_enemies)
 {
     transitioning = true
     xincrease = 0
@@ -166,15 +211,16 @@ if ds_grid_get(global.map,global.playerPos_x,global.playerPos_y -1) &gt; 0 &amp;
     activatedoor=true
 
 }
-if ds_grid_get(global.map,global.playerPos_x,global.playerPos_y +1) &gt; 0 &amp;&amp; down &amp;&amp; !instance_exists(par_enemies)
+if global.doordown &amp;&amp; down &amp;&amp; !instance_exists(par_enemies)
 {
     transitioning = true
     xincrease = 0
     yincrease = 1
     spawn = "up"
     activatedoor=true
+    
 }
-if ds_grid_get(global.map,global.playerPos_x-1,global.playerPos_y) &gt; 0 &amp;&amp; left &amp;&amp; !instance_exists(par_enemies)
+if global.doorleft &amp;&amp; left &amp;&amp; !instance_exists(par_enemies)
 {
     transitioning = true
     xincrease = -1
@@ -182,7 +228,7 @@ if ds_grid_get(global.map,global.playerPos_x-1,global.playerPos_y) &gt; 0 &amp;&
     spawn = "right"
     activatedoor=true
 }
-if ds_grid_get(global.map,global.playerPos_x+1,global.playerPos_y) &gt; 0 &amp;&amp; right &amp;&amp; !instance_exists(par_enemies)
+if global.doorright &amp;&amp; right &amp;&amp; !instance_exists(par_enemies)
 {
     transitioning = true
     xincrease = 1
@@ -196,14 +242,110 @@ if ds_grid_get(global.map,global.playerPos_x+1,global.playerPos_y) &gt; 0 &amp;&
 scr_faderoom(setRoom[global.currentDungeon,global.playerPos_y],xincrease,yincrease,spawn)
 
 //Room Check beside
-ds_grid_set(global.roomBeside,global.playerPos_x+1,global.playerPos_y,1)
-ds_grid_set(global.roomBeside,global.playerPos_x-1,global.playerPos_y,1)
-ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y+1,1)
-ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y-1,1)
+if global.doorright==true
+    ds_grid_set(global.roomBeside,global.playerPos_x+1,global.playerPos_y,1)
+if global.doorleft == true
+    ds_grid_set(global.roomBeside,global.playerPos_x-1,global.playerPos_y,1)
+if global.doordown == true
+    ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y+1,1)
+if global.doorup == true
+    ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y-1,1)
 
 ds_grid_set(global.roomVisit,global.playerPos_x,global.playerPos_y,1)
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="40">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message(ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y+1))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message(ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="38">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message(ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y-1))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message(ds_grid_get(global.mpath,global.playerPos_x-1,global.playerPos_y))
 </string>
           </argument>
         </arguments>

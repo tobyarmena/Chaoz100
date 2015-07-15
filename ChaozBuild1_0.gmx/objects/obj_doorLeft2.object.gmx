@@ -58,7 +58,7 @@ if global.spawn = "left"
         phy_position_y = clamp(phy_position_y+2,ystart-48,ystart)
     }
 
-if ds_grid_get(global.map,global.playerPos_x-1,global.playerPos_y) &gt; 0 &amp;&amp; !instance_exists(par_enemies)
+if global.doorleft==true &amp;&amp; !instance_exists(par_enemies)
     phy_position_y = clamp(phy_position_y-0.5,ystart-48,ystart)
 </string>
           </argument>

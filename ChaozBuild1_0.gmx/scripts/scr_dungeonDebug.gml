@@ -23,28 +23,31 @@ draw_set_font(fnt_inventory)
 for(i=0;i<width;i++)
     for(j=0;j<height;j++)
         {
+        
         draw_set_alpha(1)
         draw_set_colour(c_white)
-        draw_text(room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,ds_grid_get(global.map,i,j))
-         if(i==global.playerPos_x&&j==global.playerPos_y)
-          {
-          if(ds_grid_get(global.map,i,j) = 2)
-          {
-            draw_set_alpha(1)
-           draw_sprite_stretched(spr_miniMap,3,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
-          }
-          else
-          {
-          draw_set_alpha(1)
-          draw_sprite_stretched(spr_miniMap,1,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
-          }
-
-        }
+        draw_set_halign(fa_left)
+        draw_set_valign(fa_top)
+        draw_text(view_xview+i*30+30,view_yview+j*30+30,ds_grid_get(global.mpath,i,j))
+        
+        if(i==global.playerPos_x&&j==global.playerPos_y)
+            {
+            if(ds_grid_get(global.map,i,j) = 2)
+                {
+                draw_set_alpha(1)
+                draw_sprite_stretched(spr_miniMap,3,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
+                }
+            else
+                {
+                draw_set_alpha(1)
+                draw_sprite_stretched(spr_miniMap,1,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
+                }
+            }
         else if ds_grid_get(global.map,i,j) = 2 && ds_grid_get(global.roomBeside,i,j) = 1
-        {
-           draw_set_alpha(1)
+            {
+            draw_set_alpha(1)
             draw_sprite_stretched(spr_miniMap,2,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
-        }
+            }
            else if ds_grid_get(global.roomBeside,i,j) = 1 && ds_grid_get(global.map,i,j) > 0 && ds_grid_get(global.map,i,j) != 2
           {
           if ds_grid_get(global.roomVisit,i,j) = 1
