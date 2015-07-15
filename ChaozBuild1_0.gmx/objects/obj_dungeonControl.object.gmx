@@ -171,7 +171,7 @@ else
     global.doorup=false
     }
     
-if abs(ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y +1)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))&lt;=1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y +1) !=0
+if abs(ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y +1)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))==1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y +1) !=0
     {
     global.doordown=true
     }
@@ -180,7 +180,7 @@ else
     global.doordown=false
     }
     
-if abs(ds_grid_get(global.mpath,global.playerPos_x-1,global.playerPos_y)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))&lt;=1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x-1,global.playerPos_y) !=0
+if abs(ds_grid_get(global.mpath,global.playerPos_x-1,global.playerPos_y)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))==1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x-1,global.playerPos_y) !=0
     {
     global.doorleft=true
     }
@@ -189,7 +189,7 @@ else
     global.doorleft=false
     }
     
-if abs(ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))&lt;=1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y) !=0
+if abs(ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y)-ds_grid_get(global.mpath,global.playerPos_x,global.playerPos_y))==1 &amp;&amp; ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y) !=0
     {
     global.doorright=true
     }
@@ -244,12 +244,23 @@ scr_faderoom(setRoom[global.currentDungeon,global.playerPos_y],xincrease,yincrea
 //Room Check beside
 if global.doorright==true
     ds_grid_set(global.roomBeside,global.playerPos_x+1,global.playerPos_y,1)
+    else
+    ds_grid_set(global.roomBeside,global.playerPos_x+1,global.playerPos_y,0)
+
 if global.doorleft == true
     ds_grid_set(global.roomBeside,global.playerPos_x-1,global.playerPos_y,1)
+    else
+    ds_grid_set(global.roomBeside,global.playerPos_x-1,global.playerPos_y,0)
+
 if global.doordown == true
     ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y+1,1)
+    else
+    ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y+1,0)
+
 if global.doorup == true
     ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y-1,1)
+    else
+    ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y-1,0)
 
 ds_grid_set(global.roomVisit,global.playerPos_x,global.playerPos_y,1)
 
@@ -493,6 +504,14 @@ if global.firstTouch == false
 draw_text(view_xview+400,view_yview+400,"false")
 */
 
+draw_set_colour(c_blue)
+draw_text(view_xview[0]+view_wview[0]-1000,view_yview[0]+view_hview[0]-500,global.doorright)
+draw_set_colour(c_green)
+draw_text(view_xview[0]+view_wview[0]-1000,view_yview[0]+view_hview[0]-520,global.doorleft)
+draw_set_colour(c_red)
+draw_text(view_xview[0]+view_wview[0]-1000,view_yview[0]+view_hview[0]-540,global.doordown)
+draw_set_colour(c_orange)
+draw_text(view_xview[0]+view_wview[0]-1000,view_yview[0]+view_hview[0]-560,global.doorup)
 </string>
           </argument>
         </arguments>

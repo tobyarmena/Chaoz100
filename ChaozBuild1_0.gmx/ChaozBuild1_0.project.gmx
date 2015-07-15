@@ -42,6 +42,7 @@
         <sprite>sprites\spr_skull_broken</sprite>
       </sprites>
       <sprite>sprites\spr_miniMap</sprite>
+      <sprite>sprites\spr_corridor</sprite>
     </sprites>
     <sprites name="inventory">
       <sprite>sprites\spr_legslot</sprite>
