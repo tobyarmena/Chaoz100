@@ -197,7 +197,7 @@ if attention = true
         }
     if state = 2
         {
-        if distance_to_object(obj_player) &lt;= 300 &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_parent_wall,false,true)
+        if distance_to_object(obj_player) &lt;= 500 &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_parent_wall,false,true)
         {
         scr_turn(point_direction(x,y,obj_player.x,obj_player.y),10)
         phy_rotation = -direction
@@ -208,7 +208,7 @@ if attention = true
         }
         else
             {
-            scr_follow(obj_player,200,20000);
+            scr_follow(obj_player,500,20000);
         }
         }
     if state = 3
@@ -366,7 +366,7 @@ with(obj_player)
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>2</PhysicsObjectDensity>
+  <PhysicsObjectDensity>1.70000004768372</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>10</PhysicsObjectLinearDamping>
