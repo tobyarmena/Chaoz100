@@ -67,6 +67,7 @@
     </sprites>
     <sprites name="enemy">
       <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_bull</sprite>
       <sprite>sprites\spr_weeping</sprite>
       <sprite>sprites\spr_enemyranged</sprite>
       <sprite>sprites\spr_enemyranged2</sprite>
@@ -277,6 +278,7 @@
     </objects>
     <objects name="enemies">
       <object>objects\obj_enemy</object>
+      <object>objects\obj_bull</object>
       <object>objects\obj_beetlemom</object>
       <object>objects\obj_beetle</object>
       <object>objects\obj_weeping</object>
