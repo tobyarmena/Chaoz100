@@ -495,7 +495,7 @@ if (instance_number(obj_enemyspawn1)&gt;=amountspawned)
         if (instance_position(xpos,ypos,par_enemies)==noone)
             {
             //spawn the enemy
-            //instance_create(xpos,ypos,enemy)
+            instance_create(xpos,ypos,enemy)
             i++
             }
         }

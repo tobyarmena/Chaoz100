@@ -230,7 +230,7 @@ else
             <string>phy_position_x = global.spawnpoint.x
 phy_position_y = global.spawnpoint.y
 
-
+instance_create(x,y,obj_pointer)
 
 
 
