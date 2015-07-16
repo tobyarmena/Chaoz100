@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>path = path_add();
-sethp = 200
+sethp = 400
 hp= sethp;
 hpcheck = sethp;
 hpmax = sethp;
@@ -34,10 +34,31 @@ attention = false;
 timer = 1;
 action = 2;
 attacked = false;
-charging = false;
-stamina = 60;
 state = 1;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state = 1
 </string>
           </argument>
         </arguments>
@@ -84,10 +105,8 @@ state = 1;
           <argument>
             <kind>1</kind>
             <string>state = 3;
-positionx = obj_player.x
-positiony = obj_player.y
-ldx = lengthdir_x(10000,positionx)
-ldy = lengthdir_y(10000,positiony)
+ldx = lengthdir_x(60000,image_angle)
+ldy = lengthdir_y(60000,image_angle)
 </string>
           </argument>
         </arguments>
@@ -170,24 +189,26 @@ if attention = true
     {
     if state = 1
         {
-        scr_wander(7000);
+        scr_wander(20000);
         if !alarm [1]
             {
-            alarm [1] = 200;
+            alarm [1] = 300;
         }
         }
     if state = 2
         {
-        if distance_to_object(obj_player) &lt;= 300
+        if distance_to_object(obj_player) &lt;= 300 &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_parent_wall,false,true)
         {
+        scr_turn(point_direction(x,y,obj_player.x,obj_player.y),10)
+        phy_rotation = -direction
         if !alarm[2]
             {
             alarm [2] = 30;
         }
         }
-        if distance_to_object(obj_player) &gt; 300 || collision_line(x,y,obj_player.x,obj_player.y,obj_wall,false,true)
+        else
             {
-            scr_follow(obj_player,200,7000);
+            scr_follow(obj_player,200,20000);
         }
         }
     if state = 3
@@ -197,9 +218,19 @@ if attention = true
             {
             alarm [3] = 90
         }
+        }
+     if state = 4
+        {
+        
+        if !alarm[4] 
+            {
+            alarm [4] = 90
+        }
     }
 }
 
+else 
+    scr_wander(5000);
 //kills enemy when hp is 0
 if hp &lt;= 0
     {
@@ -242,7 +273,8 @@ if hp != hpcheck
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//poop
+            <string>if state == 3
+    state = 4
 </string>
           </argument>
         </arguments>
@@ -322,7 +354,7 @@ with(obj_player)
     ldx = lengthdir_x(900,point_direction(other.x,other.y,x,y))
     ldy = lengthdir_y(900,point_direction(other.x,other.y,x,y))
     physics_apply_impulse(x,y,ldx,ldy)
-    lives -= 10
+    lives -= 20
     }
 }
 </string>
@@ -334,7 +366,7 @@ with(obj_player)
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectDensity>2</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>10</PhysicsObjectLinearDamping>

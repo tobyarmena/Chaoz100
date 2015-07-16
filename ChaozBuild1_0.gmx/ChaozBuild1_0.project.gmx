@@ -164,6 +164,7 @@
       <script>scripts\scr_wander.gml</script>
       <script>scripts\scr_enemyshoot.gml</script>
       <script>scripts\scr_enemyshoot2.gml</script>
+      <script>scripts\scr_turn.gml</script>
     </scripts>
     <scripts name="Dungeon">
       <script>scripts\scr_dungeonGen.gml</script>
@@ -180,7 +181,6 @@
     <scripts name="Player">
       <script>scripts\scr_select.gml</script>
       <script>scripts\scr_turn_legs.gml</script>
-      <script>scripts\scr_turn.gml</script>
       <script>scripts\scr_move.gml</script>
       <script>scripts\scr_item_pickup.gml</script>
     </scripts>
