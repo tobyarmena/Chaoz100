@@ -105,6 +105,8 @@ global.scale = 1
 
 global.roomVisit = ds_grid_create(width,height);
 global.roomBeside = ds_grid_create(width,height);
+global.drawn = ds_grid_create(width,height)
+
 ds_grid_clear(global.roomBeside,0)
 
 
@@ -301,18 +303,25 @@ scr_faderoom(setRoom[global.currentDungeon,global.playerPos_y],xincrease,yincrea
 //Room Check beside
 if global.doorright==true or global.roomVisit == true
     ds_grid_set(global.roomBeside,global.playerPos_x+1,global.playerPos_y,1)
+else
+    ds_grid_set(global.roomBeside,global.playerPos_x+1,global.playerPos_y,0)
 
 
 if global.doorleft == true or global.roomVisit == true
     ds_grid_set(global.roomBeside,global.playerPos_x-1,global.playerPos_y,1)
-
+else
+    ds_grid_set(global.roomBeside,global.playerPos_x-1,global.playerPos_y,0)
 
 if global.doordown == true or global.roomVisit == true
     ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y+1,1)
+else
+    ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y+1,0)
 
 
 if global.doorup == true or global.roomVisit == true
     ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y-1,1)
+else
+    ds_grid_set(global.roomBeside,global.playerPos_x,global.playerPos_y-1,0)
 
 
 ds_grid_set(global.roomVisit,global.playerPos_x,global.playerPos_y,1)
