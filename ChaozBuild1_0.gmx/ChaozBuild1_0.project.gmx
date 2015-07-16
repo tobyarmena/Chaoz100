@@ -170,6 +170,8 @@
       <script>scripts\scr_dungeonGen.gml</script>
       <script>scripts\scr_dungeonDebug.gml</script>
       <script>scripts\scr_faderoom.gml</script>
+      <script>scripts\scr_resizegrid.gml</script>
+      <script>scripts\scr_checkdoor.gml</script>
     </scripts>
     <scripts name="Skulls">
       <script>scripts\scr_skull_hell.gml</script>
@@ -189,7 +191,6 @@
     <script>scripts\scr_unpause.gml</script>
     <script>scripts\scr_redraw.gml</script>
     <script>scripts\scr_fade.gml</script>
-    <script>scripts\scr_resizegrid.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_harrington</font>

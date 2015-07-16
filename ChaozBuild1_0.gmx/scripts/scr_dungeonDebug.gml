@@ -2,8 +2,8 @@ block_size = 24
 v_space = 4
 h_space = 4
 
-v_offset = -500
-h_offset = -500
+v_offset = -height*(block_size+v_space)
+h_offset = -width*(block_size+h_space)
 
 room_x =  view_xview[0]+view_wview[0]
 room_y =  view_yview[0]+view_hview[0] 
@@ -18,7 +18,8 @@ room_y =  view_yview[0]+view_hview[0]
 
 draw_set_alpha(1)
 draw_set_font(fnt_inventory)
-
+draw_set_color(c_white)
+draw_rectangle(room_x+h_offset,room_y+v_offset,room_x,room_y,true)
 
 for(i=0;i<width;i++)
     for(j=0;j<height;j++)
@@ -48,23 +49,24 @@ for(i=0;i<width;i++)
             
         if(visited[i,j]==true)
             {
+            scr_checkdoor()
             draw_sprite_stretched(spr_miniMap,roomindex,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
-            if abs(ds_grid_get(global.mpath,i-1,j)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i-1,j) >0 //left door
+            if c_left==true//abs(ds_grid_get(global.mpath,i-1,j)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i-1,j) >0 //left door
                 {
                 draw_set_colour(c_red)
                 draw_rectangle(room_x+i*block_size+h_space+h_offset-1,room_y+j*block_size+v_space+v_offset+sprite_size/2-4,room_x+i*block_size+h_space+h_offset-3,room_y+j*block_size+v_space+v_offset+sprite_size/2+4,0)
                 }
-            if abs(ds_grid_get(global.mpath,i+1,j)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i+1,j) >0 //right door
+            if c_right==true//abs(ds_grid_get(global.mpath,i+1,j)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i+1,j) >0 //right door
                 {
                 draw_set_colour(c_red)
                 draw_rectangle(room_x+i*block_size+h_space+h_offset+sprite_size+1,room_y+j*block_size+v_space+v_offset+sprite_size/2-2,room_x+i*block_size+h_space+h_offset+sprite_size+3,room_y+j*block_size+v_space+v_offset+sprite_size/2+4,0)
                 }
-            if abs(ds_grid_get(global.mpath,i,j-1)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i,j-1) >0 //up door
+            if c_up==true//abs(ds_grid_get(global.mpath,i,j-1)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i,j-1) >0 //up door
                 {
                 draw_set_colour(c_red)
                 draw_rectangle(room_x+i*block_size+h_space+h_offset+sprite_size/2-4,room_y+j*block_size+v_space+v_offset-1,room_x+i*block_size+h_space+h_offset+sprite_size/2+4,room_y+j*block_size+v_space+v_offset-3,0)
                 }
-            if abs(ds_grid_get(global.mpath,i,j+1)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i,j+1) >0 //down door
+            if c_down==true//abs(ds_grid_get(global.mpath,i,j+1)-ds_grid_get(global.mpath,i,j))==1 && ds_grid_get(global.mpath,i,j+1) >0 //down door
                 {
                 draw_set_colour(c_red)
                 draw_rectangle(room_x+i*block_size+h_space+h_offset+sprite_size/2-4,room_y+j*block_size+v_space+v_offset+sprite_size+1,room_x+i*block_size+h_space+h_offset+sprite_size/2+4,room_y+j*block_size+v_space+v_offset+sprite_size+3,0)    
@@ -72,18 +74,26 @@ for(i=0;i<width;i++)
             }
         else if(ds_grid_get(global.roomBeside,i,j)==1)
             {
-            draw_sprite_stretched(spr_miniMap,4,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
+            //draw_sprite_stretched(spr_miniMap,4,room_x+i*block_size+h_space+h_offset,room_y+j*block_size+v_space+v_offset,sprite_size,sprite_size)
             }
             
-        
+        /*
         //Debug: draw mpath
         draw_set_alpha(1)
-        draw_set_colour(c_white)
+        if(i==global.playerPos_x&&j==global.playerPos_y)
+            {
+            draw_set_colour(c_red)
+            }
+        else
+            {
+            draw_set_colour(c_white)
+            }
         draw_set_halign(fa_left)
         draw_set_valign(fa_top)
-        draw_text(view_xview+i*30+30,view_yview+j*30+30,ds_grid_get(global.mpath,i,j))
+        draw_text(view_xview+i*30+30,view_yview+j*30+30,ds_grid_get(global.mopen,i,j))
+        draw_text(view_xview+i*30+70-h_offset,view_yview+j*30+30,ds_grid_get(global.mpath,i,j))
         
-        
+        */
         
         }
         
