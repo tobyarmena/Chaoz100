@@ -123,6 +123,8 @@
       <sprite>sprites\spr_turret</sprite>
     </sprites>
     <sprite>sprites\spr_pointer</sprite>
+    <sprite>sprites\spr_barrel</sprite>
+    <sprite>sprites\spr_explo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -270,6 +272,7 @@
       <object>objects\obj_ice_pro</object>
       <object>objects\obj_minigun_pro</object>
       <object>objects\obj_wisp_pro</object>
+      <object>objects\par_pro</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_lightingControl</object>
@@ -348,6 +351,8 @@
       <objects name="Obstacles">
         <object>objects\obj_turret</object>
         <object>objects\obj_spike</object>
+        <object>objects\obj_BarrelExplo</object>
+        <object>objects\obj_explo</object>
       </objects>
     </objects>
   </objects>
