@@ -238,7 +238,7 @@ else if (ds_grid_get(global.mopen,global.playerPos_x,global.playerPos_y)==4)||(d
     if (ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y) != 0)
         global.doorright=true
     }
-else if (ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==4)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==7)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==9)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==11)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==1)
+else if (ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==2)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==6)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==7)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==8)||(ds_grid_get(global.mopen,global.playerPos_x+1,global.playerPos_y)==1)
     {
     if (ds_grid_get(global.mpath,global.playerPos_x+1,global.playerPos_y) != 0)
         global.doorright=true

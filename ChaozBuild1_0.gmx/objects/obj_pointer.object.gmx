@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_alpha = 0.7
+fade = -1
 </string>
           </argument>
         </arguments>
@@ -53,21 +54,26 @@ y = obj_player.y
 
 if instance_exists(par_enemies)
 {
-objEnemy = instance_nearest(x,y,par_enemies)
-checkDis = distance_to_object(objEnemy)
-
-pp = point_direction(x,y,objEnemy.x,objEnemy.y)
-image_angle = pp
-
-if checkDis &gt;= 700
-image_index = 0
-else if checkDis &gt;= 500
-image_index = 1
-else if checkDis &lt;500
-image_index = 2
+    objEnemy = instance_nearest(x,y,par_enemies)
+    
+    scr_turn(point_direction(x,y,objEnemy.x,objEnemy.y),4)
+    image_angle = direction
+    
+    if objEnemy.x&gt;view_xview[0]&amp;&amp;objEnemy.x&lt;view_xview[0]+view_wview[0] &amp;&amp; objEnemy.y&gt;view_yview[0]&amp;&amp;objEnemy.y&lt;view_yview[0]+view_hview[0]
+        {
+        fade = -1  
+        }
+    else
+        {
+        fade = 1
+        }
 }
 else if instance_exists(par_enemies) = 0
-instance_destroy()
+    {
+    fade = -1
+    }
+    
+image_alpha = clamp(image_alpha+(fade*0.1),0,0.7)
 </string>
           </argument>
         </arguments>

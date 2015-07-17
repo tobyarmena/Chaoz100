@@ -82,7 +82,9 @@ stamina = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Check if enemy can see player or not
+            <string>event_inherited()
+
+//Check if enemy can see player or not
 if distance_to_object(obj_player)&lt;500 &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_wall,false,true){
     attention = true;
     }
@@ -96,7 +98,7 @@ if attention = true
     if distance_to_object(obj_player) &lt; 64 &amp;&amp; attacked = false &amp;&amp; stamina &gt; 0
         {
         charging = true
-        //scr_follow(obj_player,0,14000);
+        scr_follow(obj_player,0,14000);
         image_blend = c_red
         stamina -= 1;
         }
@@ -104,36 +106,20 @@ if attention = true
         {
         charging = false
         image_blend = c_white
-       // scr_follow(obj_player,0,7000);
+        scr_follow(obj_player,0,7000);
         }
     }
 else
     {
-    //scr_wander(4000);
+    scr_wander(4000);
     }
     
-//kills enemy when hp is 0
-if hp &lt;= 0
-    {
-    instance_destroy();
-    }
 
-//indicates damage dealt
-if hp != hpcheck
-    {
-    dmg=instance_create(x+random_range(-20,20),y+random_range(-20,20),obj_dmg)
-    with(dmg)
-        {
-        damage = other.hpcheck-other.hp
-        color = c_white
-        }
-    hpcheck = hp
-    }
+
+
     
-if distance_to_object(obj_explo) &lt;= 200
-{
-physics_apply_impulse(x,y,(x-obj_explo.x)* 2000,(y-obj_explo.y)*2000)
-}
+  
+
 
 </string>
           </argument>

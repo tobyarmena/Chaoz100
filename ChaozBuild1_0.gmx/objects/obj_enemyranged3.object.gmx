@@ -131,7 +131,8 @@ alarm[0] = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>event_inherited()
+
 //Check if enemy can see player or not
 if distance_to_object(obj_player) &lt; 500 &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_wall,false,true){
     attention = true;
@@ -180,27 +181,7 @@ if attention = true
 else 
     scr_wander(4000);
 
-//kills enemy when hp is 0
-if hp &lt;= 0
-    {
-    instance_destroy();
-    with(target)
-        {
-        instance_destroy();
-        }
-    }
 
-//indicates damage dealt
-if hp != hpcheck
-    {
-    dmg=instance_create(x+random_range(-20,20),y+random_range(-20,20),obj_dmg)
-    with(dmg)
-        {
-        damage = other.hpcheck-other.hp
-        color = c_white
-        }
-    hpcheck = hp
-    }
     
 
 

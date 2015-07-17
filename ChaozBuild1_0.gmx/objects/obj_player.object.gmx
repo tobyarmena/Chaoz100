@@ -51,6 +51,7 @@ instance_create(x,y,obj_crosshair);
 instance_create(x,y,obj_gridcontrol);
 instance_create(x,y,obj_dungeonControl);
 instance_create(x,y,obj_music);
+instance_create(x,y,obj_pointer)
 
 
 //create camera
@@ -230,7 +231,7 @@ else
             <string>phy_position_x = global.spawnpoint.x
 phy_position_y = global.spawnpoint.y
 
-instance_create(x,y,obj_pointer)
+
 
 
 

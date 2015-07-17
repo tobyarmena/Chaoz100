@@ -81,27 +81,13 @@ attacked = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Movement
+            <string>event_inherited()
+
+//Movement
 scr_follow(obj_player,0,3000);
 
     
-//kills enemy when hp is 0
-if hp &lt;= 0
-    {
-    instance_destroy();
-    }
 
-//indicates damage dealt
-if hp != hpcheck
-    {
-    dmg=instance_create(x+random_range(-20,20),y+random_range(-20,20),obj_dmg)
-    with(dmg)
-        {
-        damage = other.hpcheck-other.hp
-        color = c_white
-        }
-    hpcheck = hp
-    }
     
 
 </string>

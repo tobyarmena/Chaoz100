@@ -81,30 +81,16 @@ attacked = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Movement
+            <string>event_inherited()
+
+//Movement
 checkdir = point_direction(x,y,obj_player.x,obj_player.y);
 checkdirp = obj_player.direction
 if abs(checkdir - checkdirp) &lt; 90  &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_wall,false,true)
 {
 scr_follow(obj_player,0,6000);
 }    
-//kills enemy when hp is 0
-if hp &lt;= 0
-    {
-    instance_destroy();
-    }
 
-//indicates damage dealt
-if hp != hpcheck
-    {
-    dmg=instance_create(x+random_range(-20,20),y+random_range(-20,20),obj_dmg)
-    with(dmg)
-        {
-        damage = other.hpcheck-other.hp
-        color = c_white
-        }
-    hpcheck = hp
-    }
     
 
 </string>
