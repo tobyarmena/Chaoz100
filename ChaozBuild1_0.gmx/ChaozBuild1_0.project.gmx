@@ -126,6 +126,7 @@
     <sprite>sprites\spr_barrel</sprite>
     <sprite>sprites\spr_explo</sprite>
     <sprite>sprites\spr_scythe_arm</sprite>
+    <sprite>sprites\spr_scythe_pu</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -196,6 +197,7 @@
     <script>scripts\scr_unpause.gml</script>
     <script>scripts\scr_redraw.gml</script>
     <script>scripts\scr_fade.gml</script>
+    <script>scripts\scr_angleDiff.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_harrington</font>
@@ -358,6 +360,7 @@
         <object>objects\obj_explo</object>
       </objects>
     </objects>
+    <object>objects\obj_melee</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainmenu</room>

@@ -166,7 +166,7 @@ global.items[8,0] = "Reaper"
 global.items[8,1] = 1             
 global.items[8,2] = spr_scythe_arm
 global.items[8,3] = ""           
-global.items[8,4] = spr_wisp_pu
+global.items[8,4] = spr_scythe_pu
 global.items[8,5] = scr_scythe
 
 </string>
