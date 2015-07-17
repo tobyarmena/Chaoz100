@@ -125,6 +125,7 @@
     <sprite>sprites\spr_pointer</sprite>
     <sprite>sprites\spr_barrel</sprite>
     <sprite>sprites\spr_explo</sprite>
+    <sprite>sprites\spr_scythe_arm</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -141,6 +142,7 @@
       <script>scripts\scr_ice.gml</script>
       <script>scripts\scr_magma.gml</script>
       <script>scripts\scr_wisp.gml</script>
+      <script>scripts\scr_scythe.gml</script>
     </scripts>
     <scripts name="lighting">
       <script>scripts\lsys_init.gml</script>
@@ -260,6 +262,7 @@
       <object>objects\obj_deleteslot</object>
       <object>objects\obj_magma_pu</object>
       <object>objects\obj_minigun_pu</object>
+      <object>objects\obj_scythe_pu</object>
       <object>objects\obj_ice_pu</object>
       <object>objects\obj_wisp_pu</object>
       <object>objects\obj_skull_marked_pu</object>
