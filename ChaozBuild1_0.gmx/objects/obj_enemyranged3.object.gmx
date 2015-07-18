@@ -38,6 +38,7 @@ attacked = false;
 target = instance_create(x,y,obj_target)
 move = true
 failsafe=0
+value=4;
 </string>
           </argument>
         </arguments>

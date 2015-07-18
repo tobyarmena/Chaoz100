@@ -28,6 +28,7 @@
             <string>image_speed = 0
 instance_create(x,y,obj_chest_base)
 opened = false
+
 </string>
           </argument>
         </arguments>
@@ -57,7 +58,14 @@ opened = false
     obj_player.actiondoor = 0
     opened = true
     image_speed = 0.3
-    instance_create(x+44,y+5,choose(obj_magma_pu,obj_minigun_pu,obj_ice_pu,obj_skull_marked_pu,obj_skull_eye_pu,obj_skull_hell_pu,obj_skull_broken_pu,obj_wisp_pu,obj_scythe_pu))
+    drop = choose("item","orbs")
+    if drop == "item"
+        instance_create(x+44,y+5,choose(obj_magma_pu,obj_minigun_pu,obj_ice_pu,obj_skull_marked_pu,obj_skull_eye_pu,obj_skull_hell_pu,obj_skull_broken_pu,obj_wisp_pu,obj_scythe_pu))
+    else if drop == "orbs"
+        {
+        value = irandom_range(20,40)
+        scr_droporbs(value,x+64,y+32,180,360)
+        }
     }
 </string>
           </argument>

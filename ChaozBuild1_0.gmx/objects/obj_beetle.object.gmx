@@ -35,6 +35,7 @@ timer = 1;
 action = 2;
 explode = false;
 attacked = false;
+value=0;
 </string>
           </argument>
         </arguments>

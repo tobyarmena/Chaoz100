@@ -39,6 +39,7 @@ stamina = 60;
 hiveplace = true;
 move=true
 target = instance_create(x,y,obj_target)
+value=9;
 </string>
           </argument>
         </arguments>

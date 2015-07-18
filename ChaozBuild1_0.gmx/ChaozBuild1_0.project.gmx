@@ -127,6 +127,7 @@
     <sprite>sprites\spr_barrel</sprite>
     <sprite>sprites\spr_explo</sprite>
     <sprite>sprites\spr_scythe_arm</sprite>
+    <sprite>sprites\spr_dreamorb</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -198,10 +199,12 @@
     <script>scripts\scr_redraw.gml</script>
     <script>scripts\scr_fade.gml</script>
     <script>scripts\scr_angleDiff.gml</script>
+    <script>scripts\scr_droporbs.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_harrington</font>
     <font>fonts\fnt_inventory</font>
+    <font>fonts\fnt_score</font>
   </fonts>
   <objects name="objects">
     <objects name="player">
@@ -226,6 +229,7 @@
       <object>objects\obj_startmenu</object>
       <object>objects\obj_music</object>
       <object>objects\obj_dmg</object>
+      <object>objects\obj_scorecontrol</object>
     </objects>
     <objects name="inventory">
       <object>objects\obj_parent_select</object>
@@ -361,6 +365,7 @@
       </objects>
     </objects>
     <object>objects\obj_melee</object>
+    <object>objects\obj_dreamorb</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainmenu</room>

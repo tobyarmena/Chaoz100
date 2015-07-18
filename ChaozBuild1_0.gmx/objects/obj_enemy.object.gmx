@@ -36,6 +36,7 @@ action = 2;
 attacked = false;
 charging = false;
 stamina = 60;
+value=3;
 </string>
           </argument>
         </arguments>

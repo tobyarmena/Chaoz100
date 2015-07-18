@@ -52,6 +52,8 @@ instance_create(x,y,obj_gridcontrol);
 instance_create(x,y,obj_dungeonControl);
 instance_create(x,y,obj_music);
 instance_create(x,y,obj_pointer)
+instance_create(x,y,obj_scorecontrol)
+
 
 
 //create camera
