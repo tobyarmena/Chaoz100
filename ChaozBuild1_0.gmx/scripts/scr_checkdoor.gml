@@ -69,7 +69,7 @@ else if (ds_grid_get(global.mopen,i,j)==4)||(ds_grid_get(global.mopen,i,j)==7)||
     if (ds_grid_get(global.mpath,i+1,j) != 0)
         c_right=true
     }
-else if (ds_grid_get(global.mopen,i+1,j)==4)||(ds_grid_get(global.mopen,i+1,j)==7)||(ds_grid_get(global.mopen,i+1,j)==9)||(ds_grid_get(global.mopen,i+1,j)==11)||(ds_grid_get(global.mopen,i+1,j)==1)
+else if (ds_grid_get(global.mopen,i+1,j)==2)||(ds_grid_get(global.mopen,i+1,j)==6)||(ds_grid_get(global.mopen,i+1,j)==7)||(ds_grid_get(global.mopen,i+1,j)==8)||(ds_grid_get(global.mopen,i+1,j)==1)
     {
     if (ds_grid_get(global.mpath,i+1,j) != 0)
         c_right=true

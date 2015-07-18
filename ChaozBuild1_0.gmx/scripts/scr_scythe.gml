@@ -41,7 +41,9 @@ if meleeswipe==2
             scr_angleDiff(other.x,other.y,other.direction)
             if distance_to_object(other)<48 && abs(angleDiff)>90
                 {
-                hp -= floor(irandom_range(other.mindmg,other.maxdmg)*global.skulldmg*global.tdmg);
+                dmg = floor(irandom_range(other.mindmg,other.maxdmg)*global.skulldmg*global.tdmg);
+                hp -= dmg
+                lives+= dmg*0.02
                 physics_apply_impulse(x,y,fx,fy)
                 }
             }

@@ -59,6 +59,8 @@
       <sprite>sprites\spr_skull_eye_pu</sprite>
       <sprite>sprites\spr_skull_hell_pu</sprite>
       <sprite>sprites\spr_skull_broken_pu</sprite>
+      <sprite>sprites\spr_wisp_pu</sprite>
+      <sprite>sprites\spr_scythe_pu</sprite>
     </sprites>
     <sprites name="particles">
       <sprite>sprites\spr_magma_part</sprite>
@@ -102,7 +104,6 @@
     <sprite>sprites\spr_chestbase</sprite>
     <sprite>sprites\spr_randchestspawn</sprite>
     <sprite>sprites\spr_chestcover</sprite>
-    <sprite>sprites\spr_wisp_pu</sprite>
     <sprite>sprites\spr_menu</sprite>
     <sprite>sprites\spr_resume</sprite>
     <sprite>sprites\spr_exit</sprite>
@@ -126,7 +127,6 @@
     <sprite>sprites\spr_barrel</sprite>
     <sprite>sprites\spr_explo</sprite>
     <sprite>sprites\spr_scythe_arm</sprite>
-    <sprite>sprites\spr_scythe_pu</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
