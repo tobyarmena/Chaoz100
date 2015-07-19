@@ -31,8 +31,12 @@ if action == true &amp;&amp; obj_startmenu.transitioning == false
     {
     if global.startmenu = true
         {
-        obj_startmenu.roomset=room_start_0
-        obj_startmenu.transitioning = true
+        with(obj_startmenu)
+            {
+            
+            roomset = newroom
+            transitioning = true
+            }
         global.startmenu = false
         }
     }

@@ -31,6 +31,7 @@ alpha = 1
 fade=1
 roomset = rm_mainmenu
 global.paused = true
+newroom=room_duplicate(room_start_0)
 
 global.spawn = ""
 
@@ -64,7 +65,7 @@ global.menupage = "main"
 if(alpha==1)
     {
     room_goto(roomset)
-    if roomset == room_start_0
+    if roomset == newroom
         global.paused = false
     fade = -1;
     }

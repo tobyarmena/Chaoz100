@@ -12,7 +12,8 @@ if(alpha==1)
     ds_grid_destroy(global.roomBeside)
     ds_grid_destroy(global.drawn)
     scr_dungeonGen()
-    room_goto(global.room_value[global.currentDungeon,1]);  
+    room_goto(room_duplicate(global.room_value[global.currentDungeon,1]));  
+    global.spawn = "mid"
     
     fade = -1;
     }

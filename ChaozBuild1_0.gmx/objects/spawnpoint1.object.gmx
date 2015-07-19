@@ -45,6 +45,11 @@ if global.spawn == "down"
     spawnpoint1.x = obj_doorDown.x + 64
     spawnpoint1.y = obj_doorDown.y + 32
     }
+if global.spawn == "mid"
+    {
+    spawnpoint1.x = (obj_doorLeft.x+obj_doorRight.x)/2
+    spawnpoint1.y = (obj_doorUp.y+obj_doorDown.y)/2
+    }
 </string>
           </argument>
         </arguments>
