@@ -2,7 +2,7 @@
 var w, a, s, d, mouse_direction,move_speed;
 
 //setables
-move_speed = 7000
+move_speed = argument0
 
 //set keyboard check shortcuts
 w = keyboard_check(ord('W'));

@@ -80,20 +80,13 @@ global.room_value[1,10]=room_1_10
 nextRoom=0
 global.spawn = ""
 
-for(i=0;i&lt;height;i++)
-    for(j=0;j&lt;width;j++)
-    {
-        visited[j,i] = false;
-        setRoom[j,i] = room_start_0;
-    }
-    
-setRoom[global.playerPos_x,global.playerPos_y] = room_start_0
-visited[global.playerPos_x,global.playerPos_y] = true
+
 
 //Transition Fade Variables
 alpha = 0
 fade = 1
 transitioning = false
+transitioning2 = false
 
 //room change exchange variables
 xincrease = 0
@@ -103,11 +96,7 @@ spawn = ""
 //Variable for difficulty scaling
 global.scale = 1
 
-global.roomVisit = ds_grid_create(width,height);
-global.roomBeside = ds_grid_create(width,height);
-global.drawn = ds_grid_create(width,height)
 
-ds_grid_clear(global.roomBeside,0)
 
 
 
@@ -299,6 +288,7 @@ if global.doorright &amp;&amp; right &amp;&amp; !instance_exists(par_enemies)
 }
 //Using the updated information, teleport player to the next room with a fading transition
 scr_faderoom(setRoom[global.currentDungeon,global.playerPos_y],xincrease,yincrease,spawn)
+scr_fadedungeon()
 
 //Room Check beside
 if global.doorright==true or global.roomVisit == true
@@ -465,7 +455,7 @@ ds_grid_set(global.roomVisit,global.playerPos_x,global.playerPos_y,1)
           <argument>
             <kind>1</kind>
             <string>activatedoor=false
-if visited[global.playerPos_x,global.playerPos_y] = false
+if visited[global.playerPos_x,global.playerPos_y] == false
 {
 visited[global.playerPos_x,global.playerPos_y] = true;
 global.scale += 0.05
@@ -489,7 +479,7 @@ if (instance_number(obj_enemyspawn1)&gt;=amountspawned)
         ypos = instance_find(obj_enemyspawn1,randomspawner).y
         
         //choose a random enemy
-        enemy = choose(obj_enemy,obj_enemy,obj_enemy,obj_enemyranged2,obj_enemyranged3)
+        enemy = choose(obj_enemy,obj_enemy,obj_enemy,obj_enemyranged2,obj_enemyranged3,obj_bull)
         
         //check if there isnt already an enemy in the position
         if (instance_position(xpos,ypos,par_enemies)==noone)

@@ -1,4 +1,5 @@
 if transitioning = true
+{
     alpha = clamp(alpha + (fade*0.05),0,1)
 
 if(alpha==1)
@@ -28,6 +29,5 @@ if (alpha==0)&&(fade == -1)
     alpha = 0
     obj_dungeonControl.activatedoor=false
     }
-    
-
+}
     

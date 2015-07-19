@@ -29,7 +29,7 @@
 //0 = can't move
 //1 = controllable
 //2 = opening door
-
+spd=7000
 actiondoor = 0;
 
 
@@ -118,7 +118,7 @@ if distance_to_object(obj_doorUp)&gt;5&amp;&amp;distance_to_object(obj_doorDown)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.action=1{scr_move();}
+            <string>if global.action=1{scr_move2(spd);scr_facemouse()}
 
 if distance_to_point(mouse_x,mouse_y)&gt;30
     {

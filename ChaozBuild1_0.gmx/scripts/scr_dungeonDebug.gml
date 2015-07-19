@@ -86,7 +86,7 @@ for(i=0;i<width;i++)
         }
         }
             
-        /*
+        
         //Debug: draw mpath
         draw_set_alpha(1)
         if(i==global.playerPos_x&&j==global.playerPos_y)
@@ -102,7 +102,7 @@ for(i=0;i<width;i++)
         draw_text(view_xview+i*30+30,view_yview+j*30+30,ds_grid_get(global.mopen,i,j))
         draw_text(view_xview+i*30+70-h_offset,view_yview+j*30+30,ds_grid_get(global.mpath,i,j))
         
-        */
+        
         
         }
         

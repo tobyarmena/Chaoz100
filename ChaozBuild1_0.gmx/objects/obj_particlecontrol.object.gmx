@@ -123,13 +123,17 @@ part_type_orientation(global.ice3_pt,0,360,5,0,true)
 global.wisp_sys = part_system_create();
 global.wisp_pt = part_type_create();
 part_system_depth(global.wisp_sys, -9);
-
 part_type_sprite(global.wisp_pt,spr_wisp_pt,false,false,false)
 part_type_alpha2(global.wisp_pt,0.1,0)
 part_type_size(global.wisp_pt,2,2,-0.15,0)
-//part_type_color2(global.wisp_pt,c_white,c_gray)
 part_type_life(global.wisp_pt,20,25)
-//part_type_orientation(global.wisp_pt,defaultdir,defaultdir,0,0,false)
+
+
+
+
+
+
+
 
 
 

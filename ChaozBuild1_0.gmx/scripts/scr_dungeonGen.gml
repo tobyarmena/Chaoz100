@@ -42,10 +42,15 @@ grid mopen legend:
 */
 
 //create grid
+
+
 global.map=ds_grid_create(width,height)
-global.mpath=ds_grid_create(width,height)
-global.mopen=ds_grid_create(width,height)
 ds_grid_clear(global.map,0)
+global.mpath=ds_grid_create(width,height)
+ds_grid_clear(global.mpath,0)
+global.mopen=ds_grid_create(width,height)
+ds_grid_clear(global.mopen,0)
+
 
 //set starting room
 rmstart=ds_grid_set(global.map,irandom_range(width*0.3,width*0.6),irandom_range(height*0.3,height*0.6),1)
@@ -153,10 +158,32 @@ if ds_grid_value_disk_exists(global.map, global.startx, global.starty, distancet
     scr_dungeonGen()
 
 scr_resizegrid()
+
+//set the starting coordinates
 global.startx=ds_grid_value_x(global.map,0,0,width,height,1);
 global.starty=ds_grid_value_y(global.map,0,0,width,height,1);
+
 
 global.playerGrid = ds_grid_create(height,width)
 
 global.playerPos_x = global.startx
 global.playerPos_y = global.starty
+
+global.roomVisit = ds_grid_create(width,height);
+ds_grid_clear(global.roomVisit,0)
+global.roomBeside = ds_grid_create(width,height);
+ds_grid_clear(global.roomBeside,0)
+global.drawn = ds_grid_create(width,height)
+ds_grid_clear(global.drawn,0)
+
+
+
+for(i=0;i<height;i++)
+    for(j=0;j<width;j++)
+    {
+        visited[j,i] = false;
+        setRoom[j,i] = room_start_0;
+    }
+    
+setRoom[global.playerPos_x,global.playerPos_y] = room_start_0
+visited[global.playerPos_x,global.playerPos_y] = true

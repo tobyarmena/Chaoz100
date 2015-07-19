@@ -26,7 +26,35 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.3
+delay=false
 
+
+
+//for scripts
+candash=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>delay=false
 </string>
           </argument>
         </arguments>
@@ -49,7 +77,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spd=10
+            <string>script_execute(global.inventory[29,5])
+
+if global.inventory[29,2]==spr_empty
+    {
+    sprite_index=spr_normal_legs
+    }
+else
+    {
+    sprite_index=global.inventory[29,2]
+    }  
+
+spd=10
 if global.action = 1
 {
 if(keyboard_check(ord("W"))) or (keyboard_check(ord("A"))) or (keyboard_check(ord("S"))) or (keyboard_check(ord("D"))) 
