@@ -62,7 +62,7 @@ value=9;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hiveplace = true;
+            <string>spawn = true;
 </string>
           </argument>
         </arguments>
@@ -154,7 +154,7 @@ if attention = true
 //hive place
 if spawn = true 
     {
-    alarm[1] = 600;
+    alarm[1] = 300;
     spawn = false;
     beetle1=instance_create(x+64,y,obj_beetle);
     beetle2=instance_create(x-64,y,obj_beetle);

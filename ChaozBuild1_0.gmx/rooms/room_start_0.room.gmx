@@ -132,6 +132,7 @@
     <instance objName="obj_chest" x="3104" y="2272" name="inst_16CCEDD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="3360" y="2496" name="inst_4661B710" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_portal" x="3392" y="2816" name="inst_D7C23560" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_beetlemom2" x="3040" y="2592" name="inst_0F87D6B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="2688" y="2368" w="64" h="64" xo="0" yo="0" id="10000007" name="inst_5CBB50B7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
