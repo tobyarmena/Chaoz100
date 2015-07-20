@@ -77,6 +77,7 @@
       <sprite>sprites\spr_enemyranged2</sprite>
       <sprite>sprites\spr_enemyranged3</sprite>
       <sprite>sprites\spr_beetlemom</sprite>
+      <sprite>sprites\spr_beetlemom2</sprite>
       <sprite>sprites\spr_beetle</sprite>
       <sprite>sprites\spr_centihead</sprite>
       <sprite>sprites\spr_centipede</sprite>
@@ -303,6 +304,7 @@
       <object>objects\obj_enemy</object>
       <object>objects\obj_bull</object>
       <object>objects\obj_beetlemom</object>
+      <object>objects\obj_beetlemom2</object>
       <object>objects\obj_beetle</object>
       <object>objects\obj_weeping</object>
       <object>objects\obj_enemyranged3</object>
